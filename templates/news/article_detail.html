@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero-blue text-center text-white py-5">
+  <div class="container">
+    <h1 class="fw-bold">{{ article.title }}</h1>
+    <p class="mb-0">
+      <strong>By:</strong> {{ article.author.username }}
+      {% if article.team %}| <strong>Team:</strong> {{ article.team.name }}{% endif %}
+      {% if article.league %}| <strong>League:</strong> {{ article.league.name }}{% endif %}
+    </p>
+  </div>
+</section>
+
+<div class="container my-5">
+  <div class="sport-card p-4">
+    <p>{{ article.body|linebreaks }}</p>
+    <a href="/" class="btn-blue mt-3">Back</a>
+  </div>
+</div>
+
+{% endblock %}

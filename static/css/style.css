@@ -1,0 +1,152 @@
+/* ===============================================
+   SPORTS NEWS APP - MAIN STYLESHEET
+   Blue theme with green highlights
+   =============================================== */
+
+/* ---------- GLOBAL LAYOUT ---------- */
+body {
+  background: #f7f9fc;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- NAVBAR ---------- */
+.sports-nav {
+  background-color: #0b4fad !important;
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Site title */
+.navbar-brand {
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.navbar-brand:hover {
+  color: #a8caff !important;
+}
+
+/* Navbar links general styling */
+.sports-nav a.nav-link {
+  font-weight: 600;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+/* Home link - stays white */
+.sports-nav a.nav-link[href="/"] {
+  color: #ffffff !important;
+}
+
+/* Review and Admin links - bright green for visibility */
+.sports-nav a.nav-link[href="/review/"],
+.sports-nav a.nav-link[href="/admin/"] {
+  color: #4ef37b !important; /* green highlight */
+}
+
+/* Hover - lighter green shade */
+.sports-nav a.nav-link[href="/review/"]:hover,
+.sports-nav a.nav-link[href="/admin/"]:hover {
+  color: #7bffb0 !important;
+  text-decoration: underline;
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero-blue {
+  background: linear-gradient(135deg, #0b4fad, #072f66);
+  color: white;
+  border-radius: 0 0 40px 40px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  padding: 50px 0;
+  text-align: center;
+}
+
+.hero-blue h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero-blue p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ---------- ARTICLE CARDS ---------- */
+.sport-card {
+  background: #ffffff;
+  border-left: 6px solid #0b4fad;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  height: 100%;
+}
+
+.sport-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.sport-card h4 {
+  color: #0b4fad;
+  font-weight: 700;
+}
+
+.sport-card p {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn-blue {
+  background: #0b4fad;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.btn-blue:hover {
+  background: #0e60d4;
+  color: #fff;
+}
+
+/* ---------- FOOTER ---------- */
+.sports-footer {
+  background: #0b4fad;
+  color: #fff;
+  text-align: center;
+  padding: 14px;
+  margin-top: 60px;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media (max-width: 768px) {
+  .sports-nav .nav-link {
+    display: block;
+    margin: 8px 0;
+  }
+
+  .hero-blue {
+    border-radius: 0;
+  }
+
+  .sport-card {
+    margin-bottom: 20px;
+  }
+}
+

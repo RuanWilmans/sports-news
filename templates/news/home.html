@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero-blue text-center text-white py-5">
+  <div class="container">
+    <h1 class="fw-bold display-6">Live Sports Headlines</h1>
+    <p class="lead">Latest approved stories from leagues and teams</p>
+  </div>
+</section>
+
+<div class="container mt-5">
+  <h2 class="mb-4 fw-bold text-uppercase text-center">Latest Articles</h2>
+  {% if articles %}
+    <div class="row">
+      {% for a in articles %}
+      <div class="col-md-4 mb-4">
+        <div class="sport-card p-3 h-100">
+          <h4 class="fw-bold"><a class="text-decoration-none text-dark" href="{% url 'article_detail' a.id %}">{{ a.title }}</a></h4>
+          <p class="text-muted mb-1"><strong>By:</strong> {{ a.author.username }}</p>
+          {% if a.team %}<p class="small mb-0"><strong>Team:</strong> {{ a.team.name }}</p>{% endif %}
+          {% if a.league %}<p class="small"><strong>League:</strong> {{ a.league.name }}</p>{% endif %}
+          <a href="{% url 'article_detail' a.id %}" class="btn-blue mt-auto">Read</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-center">No articles yet.</p>
+  {% endif %}
+</div>
+
+{% endblock %}
